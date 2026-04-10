@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
     public void CollectCoin()
     {
         collectedCoins++;
-        Debug.Log($"收集进度: {collectedCoins}/{totalCoins}");
+        Debug.Log(string.Format("收集进度: {0}/{1}", collectedCoins, totalCoins));
         
         if (collectedCoins >= totalCoins)
         {
@@ -32,7 +33,12 @@ public class GameManager : MonoBehaviour
     
     void WinGame()
     {
-        Debug.Log("🎉 恭喜！你收集了所有金币！");
-        // 这里可以显示胜利UI或加载下一关
+        Debug.Log("恭喜！你收集了所有金币！");
+    }
+    
+    public void ResetGame()
+    {
+        collectedCoins = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -7,15 +7,21 @@ public class EnemyPatrol : MonoBehaviour
     
     private Vector3 startPosition;
     private bool movingRight = true;
+    private SpriteRenderer spriteRenderer;
     
     void Start()
     {
         startPosition = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
     void Update()
     {
-        // 巡逻移动
+        Patrol();
+    }
+    
+    void Patrol()
+    {
         if (movingRight)
         {
             transform.position += Vector3.right * patrolSpeed * Time.deltaTime;
@@ -38,8 +44,15 @@ public class EnemyPatrol : MonoBehaviour
     
     void Flip()
     {
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+        }
+        else
+        {
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
     }
 }

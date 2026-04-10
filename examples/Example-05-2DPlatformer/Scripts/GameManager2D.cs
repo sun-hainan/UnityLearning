@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager2D : MonoBehaviour
 {
@@ -28,5 +29,10 @@ public class GameManager2D : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+    
+    public void ResetScore()
+    {
+        score = 0;
     }
 }

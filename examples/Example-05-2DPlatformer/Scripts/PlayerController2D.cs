@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController2D : MonoBehaviour
@@ -22,11 +23,13 @@ public class PlayerController2D : MonoBehaviour
     private bool isGrounded;
     private int jumpsRemaining;
     private bool facingRight = true;
+    private SpriteRenderer spriteRenderer;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         jumpsRemaining = maxJumps;
     }
@@ -34,15 +37,19 @@ public class PlayerController2D : MonoBehaviour
     void Update()
     {
         // 地面检测
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (groundCheck != null)
+        {
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        }
         
         if (isGrounded)
         {
             jumpsRemaining = maxJumps;
         }
         
-        // 跳跃
-        if (Input.GetButtonDown("Jump") && jumpsRemaining > 0)
+        // 跳跃 - 支持空格键和W键
+        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) 
+            && jumpsRemaining > 0)
         {
             Jump();
         }
@@ -59,8 +66,8 @@ public class PlayerController2D : MonoBehaviour
     
     void FixedUpdate()
     {
-        // 移动
-        float move = Input.GetAxis("Horizontal");
+        // 移动 - 支持方向键和WASD
+        float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         
         // 翻转角色
@@ -88,16 +95,23 @@ public class PlayerController2D : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.flipX = !facingRight;
+        }
+        else
+        {
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
     }
     
     void UpdateAnimator()
     {
         if (animator == null) return;
         
-        float move = Input.GetAxis("Horizontal");
+        float move = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(move));
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetFloat("VerticalVelocity", rb.velocity.y);
@@ -119,12 +133,12 @@ public class PlayerController2D : MonoBehaviour
     
     System.Collections.IEnumerator DamageFlash()
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null)
+        if (spriteRenderer != null)
         {
-            sr.color = Color.red;
+            Color originalColor = spriteRenderer.color;
+            spriteRenderer.color = Color.red;
             yield return new WaitForSeconds(0.1f);
-            sr.color = Color.white;
+            spriteRenderer.color = originalColor;
         }
     }
     
@@ -136,8 +150,7 @@ public class PlayerController2D : MonoBehaviour
     
     void ResetLevel()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
     void OnTriggerEnter2D(Collider2D other)
