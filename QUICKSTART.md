@@ -6,6 +6,17 @@
 
 ---
 
+## 环境准备清单
+
+| 组件 | 是否必需 | 安装指南 |
+|------|---------|---------|
+| Unity Hub / 团结Hub | ✅ 必需 | 见下方步骤1 |
+| Unity / 团结引擎 | ✅ 必需 | 见下方步骤1 |
+| **Visual Studio 2022** | ✅ **必需** | **[📖 Visual Studio安装指南](VisualStudio安装指南.md)** |
+| Git（可选）| ⭕ 推荐 | 用于代码版本管理 |
+
+---
+
 ## 步骤1：验证Unity/团结引擎安装（2分钟）
 
 ### 国际版Unity
@@ -24,15 +35,17 @@
 
 ---
 
-## 步骤2：验证脚本环境（1分钟）
+## 步骤2：验证Visual Studio（2分钟）
+
+> ⚠️ **还没有安装 VS？** → 先阅读 [Visual Studio安装指南](VisualStudio安装指南.md)
 
 1. 在项目中，Project 窗口右键 → Create → **C# Script**，命名为 `Test`
-2. 双击打开，看是否能启动 **Visual Studio / Rider**
+2. **双击** 打开，看是否能启动 **Visual Studio**
 3. 如果能看到代码编辑器，✅ **通过**
 
 ---
 
-## 步骤3：运行第一个脚本（2分钟）
+## 步骤3：运行第一个脚本（1分钟）
 
 把这段代码复制到 `Test.cs`：
 
@@ -43,14 +56,14 @@ public class Test : MonoBehaviour
 {
     void Start()
     {
-        Debug.Log("✅ Unity/团结引擎 环境配置成功！");
+        Debug.Log("✅ Unity/团结引擎 + Visual Studio 环境配置成功！");
     }
 }
 ```
 
 1. 把脚本拖到 Hierarchy 的 **Main Camera** 上
 2. 点击 **Play** 按钮
-3. 看 Console 窗口，如果显示 "✅ Unity/团结引擎 环境配置成功！"，✅ **全部通过**
+3. 看 Console 窗口，如果显示 "✅ Unity/团结引擎 + Visual Studio 环境配置成功！"，✅ **全部通过**
 
 ---
 
@@ -64,6 +77,7 @@ public class Test : MonoBehaviour
 
 ### Q2: 双击脚本不打开 Visual Studio？
 - Unity/团结 → Edit → Preferences → External Tools → External Script Editor → 选择 Visual Studio
+- 详细步骤见 [Visual Studio安装指南](VisualStudio安装指南.md) 的"常见问题"部分
 
 ### Q3: Console 不显示日志？
 - Window → General → Console 打开控制台窗口
@@ -83,6 +97,6 @@ public class Test : MonoBehaviour
 
 ---
 
-**文档版本**：v1.1  
+**文档版本**：v1.2  
 **最后更新**：2026年4月10日  
-**适配**：Unity 2021.3+ / 团结引擎 1.6+
+**适配**：Unity 2021.3+ / 团结引擎 1.6+ / Visual Studio 2022
