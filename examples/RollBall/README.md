@@ -1,6 +1,6 @@
-# 示例项目 RollBall 场景设置指南
+# 示例项目场景设置指南
 
-## 场景结构
+## RollBall 场景结构
 
 ```
 Scene: RollBall
