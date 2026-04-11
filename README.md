@@ -44,10 +44,10 @@
 
 | 项目 | 难度 | 描述 |
 |-----|------|------|
-| [RollBall](示例项目/RollBall/) | ⭐⭐ | 滚球收集游戏 |
-| [FlappyBird](示例项目/FlappyBird/) | ⭐⭐⭐ | 像素鸟克隆 |
+| [RollBall](examples/RollBall/) | ⭐⭐ | 滚球收集游戏 |
+| [FlappyBird](examples/FlappyBird/) | ⭐⭐⭐ | 像素鸟克隆 |
 
-👉 [查看所有示例](示例项目/)
+👉 [查看所有示例](examples/)
 
 ---
 
@@ -80,7 +80,7 @@
 
 欢迎提交：
 - 截图/GIF演示 → [images/](images/)
-- 示例项目 → [示例项目/](示例项目/)
+- 示例项目 → [examples/](examples/)
 - 教程改进 → 直接PR
 
 ---
