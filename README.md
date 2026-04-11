@@ -1,127 +1,94 @@
-<p align="center">
-  <img src="imgs/logo.png" width="200" alt="Unity Learning">
-</p>
+# UnityLearning - Unity与团结引擎学习仓库
 
-<h1 align="center">Unity + C# 完全自学教程</h1>
+[![Unity](https://img.shields.io/badge/Unity-2022.3%20LTS-black?logo=unity)](https://unity.com)
+[![团结引擎](https://img.shields.io/badge/团结引擎-1.8.x-red)](https://unity.cn/tuanjie)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/难度-零基础入门-brightgreen">
-  <img src="https://img.shields.io/badge/周期-8个月-blue">
-  <img src="https://img.shields.io/badge/项目-3个完整游戏-orange">
-</p>
-
-> 🎯 **目标**：只看本地文件，从零基础到独立开发游戏  
-> 📁 **位置**：`F:\UnityLearning\`  
-> ⏱️ **预计时间**：8个月（每周投入10-15小时）
+> 📚 从入门到能做出小游戏的完整学习资源
 
 ---
 
-## 🚀 新手？从这里开始！
+## 🚀 快速开始
 
-**还没配置环境？** → [📖 5分钟快速验证](QUICKSTART.md)
+| 步骤 | 操作 | 预计时间 |
+|-----|------|---------|
+| 1 | [安装Unity/团结引擎](QUICKSTART.md) | 30分钟 |
+| 2 | 阅读[快速开始指南](QUICKSTART.md#验证步骤) | 5分钟 |
+| 3 | 创建第一个项目并运行 | 5分钟 |
 
-**没有 Visual Studio？** → [🔧 VS安装指南](VS-Guide.md)
-
-**使用团结引擎（中国版）？** → [🇨🇳 团结引擎适配指南](Tuanjie-Guide.md)
-
-**环境已配好？** → [📚 完整自学指南](Tutorial.md)
-
-**想先看效果？** → 查看 [02-2DShootEmUp](02-2DShootEmUp) 项目
+**验证成功标志**：能看到旋转的立方体 = 环境OK ✅
 
 ---
 
-## 📖 学习路线
+## 📖 学习路径
 
-### 阶段一：入门（第1-8周）
+### 🔰 新手必读
+- [完整自学指南](完整自学指南.md) - 带检查清单的完整路线
+- [FAQ常见问题](FAQ.md) - 遇到问题先看这里
+- [快速开始](QUICKSTART.md) - 5分钟环境验证
 
-| 章节 | 内容 | 时间 |
-|------|------|------|
-| [第0-2章](Tutorial.md) | 安装Unity + 认识界面 | 第1-2周 |
-| [第3章](Tutorial.md) | C#基础语法 | 第3-4周 |
-| [第4-6章](Tutorial.md) | 核心概念 + 物理 + 2D基础 | 第5-6周 |
-| [第7-9章](Tutorial.md) | 动画 + UI + 综合项目 | 第7-8周 |
+### 📂 模块内容
 
-### 阶段二：项目实战（第9-16周）
-
-| 项目 | 内容 | 难度 |
-|------|------|------|
-| [02-2DShootEmUp](02-2DShootEmUp) | 2D射击游戏（复刻 + 改进） | ⭐⭐ |
-
-### 阶段三：进阶（第17-32周）
-
-| 项目 | 内容 | 难度 |
-|------|------|------|
-| [03-RTS-Strategy](03-RTS-Strategy) | 即时战略游戏（行为树、存档、小地图） | ⭐⭐⭐ |
-| [04-HacknSlash](04-HacknSlash) | 动作RPG游戏（战斗系统、装备、背包） | ⭐⭐⭐ |
+| 模块 | 内容 | 预计时间 | 难度 |
+|-----|------|---------|------|
+| [01-环境搭建](01-环境搭建/) | Unity安装、界面介绍 | 3天 | ⭐ |
+| [02-第一个脚本](02-第一个脚本/) | C#基础、组件系统 | 5天 | ⭐⭐ |
+| [03-基础概念](03-基础概念/) | Transform、物理、碰撞 | 10天 | ⭐⭐⭐ |
+| [04-小游戏实战](04-小游戏实战/) | 完整项目开发 | 15天 | ⭐⭐⭐⭐ |
 
 ---
 
-## 📁 文件夹说明
+## 🎮 示例项目
 
-| 文件名 | 说明 | 用途 |
-|--------|------|------|
-| `Tutorial.md` | ⭐ **主教材** | 从头学到尾 |
-| `Unity-Handbook.md` | ⭐ **备选教材** | 更全面，含100问 |
-| `Tuanjie-Guide.md` | 🇨🇳 中国版Unity适配 | 团结引擎用户必看 |
-| `VS-Guide.md` | 🔧 代码编辑器安装 | 新手必看 |
-| `Checklist.md` | ✅ 学习进度跟踪 | 每完成一项勾选 |
-| `FAQ.md` | ❓ 常见问题 | 快速查找解答 |
-| `CHANGELOG.md` | 📝 更新记录 | 版本变更历史 |
-| `LICENSE` | 📄 开源协议 | MIT License |
-| `CONTRIBUTING.md` | 🤝 贡献指南 | 如何参与项目 |
-| `01-AwesomeUnityTutorial/` | 📚 详细知识点库 | 碰到不懂的去查 |
-| `02-2DShootEmUp/` | 🎮 2D射击游戏项目 | 第一个实战项目 |
-| `03-RTS-Strategy/` | 🎮 RTS策略游戏项目 | 进阶项目 |
-| `04-HacknSlash/` | 🎮 动作RPG项目 | 高级项目 |
-| `examples/` | 💻 可运行示例 | 零基础入门代码 |
-| `screenshots/` | 🖼️ 截图规范 | 截图制作指南 |
+可直接导入的完整项目（.unitypackage）：
+
+| 项目 | 难度 | 描述 |
+|-----|------|------|
+| [RollBall](示例项目/RollBall/) | ⭐⭐ | 滚球收集游戏 |
+| [FlappyBird](示例项目/FlappyBird/) | ⭐⭐⭐ | 像素鸟克隆 |
+
+👉 [查看所有示例](示例项目/)
 
 ---
 
-## 🔍 详细知识点目录
+## 📸 可视化教程
 
-### 01-AwesomeUnityTutorial/
+> 📷 截图和GIF演示放在 [images/](images/) 目录
 
-| 目录 | 内容 | 何时看 |
-|------|------|--------|
-| `核心概念/` | GameObject、Prefab、Tag、Layers、物理 | 学第4-6章时 |
-| `C#游戏开发内功训练/` | 面向对象、泛型、容器、委托、事件、设计模式 | 学第3章时 |
-| `官方教程项目系列/` | 官方入门教程配套文档 | 作为补充 |
-| `UI系统/` | UGUI、事件系统 | 学第8章时 |
-| `动画/` | Animator、BlendTree、AnimationRigging | 学第7章时 |
-| `2D游戏/` | 2D游戏开发专题 | 学第6章时 |
-
----
-
-## ❓ 遇到问题？
-
-1. 先查 [Unity-Handbook.md](Unity-Handbook.md) 附录B：常见问题100问
-2. 搜索 `01-AwesomeUnityTutorial/` 相关目录
-3. 查看对应项目源码
-4. **团结引擎用户**：查看[Tuanjie-Guide.md](Tuanjie-Guide.md)
+每个教程模块都配有：
+- 静态截图 - 界面说明
+- GIF演示 - 操作步骤
+- 游戏演示 - 实际效果
 
 ---
 
 ## 🛠️ 环境要求
 
-| 引擎 | 推荐版本 | 状态 |
-|------|---------|------|
-| Unity 国际版 | 2022.3 LTS | ✅ 完全支持 |
-| 团结引擎 | 1.8.5 | ✅ 完全支持 |
-| 团结引擎 | 1.6.x LTS | ✅ 完全支持 |
-| **Visual Studio** | **2022 Community** | ✅ **必需** |
+| 引擎 | 版本 | 下载 |
+|-----|------|------|
+| **Unity国际版** | 2022.3 LTS | [unity.com](https://unity.com/releases/lts) |
+| **团结引擎** | 1.8.x | [unity.cn](https://unity.cn/tuanjie) |
+
+### 团结引擎适配
+- ✅ 完全兼容本仓库所有代码
+- ✅ 提供专属[适配指南](团结引擎适配指南.md)
+- ✅ 示例代码已做命名空间兼容
 
 ---
 
-## 📊 项目统计
+## 🤝 贡献
 
-- 📄 文档：10个
-- 🎮 示例项目：5个
-- 💻 完整游戏项目：3个
-- 📝 代码行数：5000+
+欢迎提交：
+- 截图/GIF演示 → [images/](images/)
+- 示例项目 → [示例项目/](示例项目/)
+- 教程改进 → 直接PR
 
 ---
 
-**仓库地址**：https://github.com/sun-hainan/UnityLearning  
-**最后更新**：2026年4月10日  
-**适配声明**：本教程已适配 Unity 国际版 与 团结引擎（中国版）
+## 📜 许可
+
+MIT License - 自由使用，转载请注明出处
+
+---
+
+> 💡 **提示**：学习过程中遇到问题？先查[FAQ](FAQ.md)，再问社区！
